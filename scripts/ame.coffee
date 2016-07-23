@@ -25,7 +25,7 @@ module.exports = (robot) ->
             web = new webClient token
             opts = {
               file: fs.createReadStream(fileName),
-              channels: '#general'
+              channels: res.envelope.room
             }
             web.files.upload fileName, opts, (err, resp) ->
               res.send "upしたで"
