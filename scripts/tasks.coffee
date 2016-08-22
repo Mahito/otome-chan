@@ -66,8 +66,8 @@ module.exports = (robot) ->
   # Trelloのポイントを計算
   robot.respond /(todo|task) calc/i, (msg) ->
     userId    = process.env.HUBOT_TASKS_USER_ID
-    doneList1  = process.env.HUBOT_TASKS_DONE_LIST1
-    doneList2  = process.env.HUBOT_TASKS_DONE_LIST22
+    doneList1  = process.env.HUBOT_TASKS_USER_TASK_LIST1
+    doneList2  = process.env.HUBOT_TASKS_USER_TASK_LIST2
     boardName = process.env.HUBOT_TASKS_BOARD_NAME
 
     trello      = getTrello()
@@ -101,8 +101,8 @@ module.exports = (robot) ->
   robot.respond /(todo|task) clean/i, (msg) ->
     userId      = process.env.HUBOT_TASKS_USER_ID
     boardName   = process.env.HUBOT_TASKS_BOARD_NAME
-    doneList1   = process.env.HUBOT_TASKS_DONE_LIST1
-    doneList2   = process.env.HUBOT_TASKS_DONE_LIST22
+    doneList1   = process.env.HUBOT_TASKS_USER_TASK_LIST1
+    doneList2   = process.env.HUBOT_TASKS_USER_TASK_LIST2
     dailyTask   = process.env.HUBOT_TASKS_DAILY_TASK_LIST
     weekendTask = process.env.HUBOT_TASKS_WEEKEND_TASK_LIST
 
