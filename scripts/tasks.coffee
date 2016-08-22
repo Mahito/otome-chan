@@ -88,12 +88,12 @@ module.exports = (robot) ->
                   userPoint = calculateTaskPoint list.id
                   userPoint
                     .then (point) ->
-                      msg.send "#{list.name}: #{point} pt"
+                      msg.send "#{doneList1}: #{point} pt"
                 when doneList2
                   userPoint = calculateTaskPoint list.id
                   userPoint
                     .then (point) ->
-                      msg.send "#{list.name}: #{point} pt"
+                      msg.send "#{doneList2}: #{point} pt"
           .catch (error) ->
             msg.send 'Listの取得に失敗したで', error
 
@@ -140,14 +140,14 @@ module.exports = (robot) ->
             userPoint = calculateTaskPoint user1.id
             userPoint
               .then (point) ->
-                msg.send "#{user1.name}: #{point} pt"
+                msg.send "#{doneList1}: #{point} pt"
               .then (_) ->
                 cleanTask user1.id, daily.id, weekend.id
 
             userPoint = calculateTaskPoint user2.id
             userPoint
               .then (point) ->
-                msg.send "#{user2.name}: #{point} pt"
+                msg.send "#{doneList2}: #{point} pt"
               .then (_) ->
                 cleanTask user2.id, daily.id, weekend.id
 
